@@ -41,7 +41,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .link-btn {
@@ -93,14 +93,20 @@
   <h2 id="photo-title"></h2>
   <p id="photo-text"></p>
 
+  <h2 id="book-title"></h2>
+  <p id="book-text"></p>
+
   <div class="links">
     <a href="https://www.instagram.com/lucassahmfotografias" class="link-btn" target="_blank">Instagram 📸</a>
     <a href="https://wa.me/5547984912771" class="link-btn" target="_blank">WhatsApp 💬</a>
     <a href="http://www.linkedin.com/in/lucas-sahm" class="link-btn" target="_blank">LinkedIn 💼</a>
     <a href="https://github.com/LUCSAHM" class="link-btn" target="_blank">GitHub 👨‍💻</a>
+    <a href="https://linktr.ee/lucassahm" class="link-btn" target="_blank">Linktree 🌐</a>
+    <a href="https://clubedeautores.com.br/livro/entre-as-linhas-do-destino" class="link-btn" target="_blank">Clube de Autores 📚</a>
+    <a href="https://www.amazon.com.br/dp/B0DQVMF2YP" class="link-btn" target="_blank">Amazon 🛒</a>
   </div>
 
-  <footer>Site por Lucas Sahm — Desenvolvedor e Fotógrafo</footer>
+  <footer>Site por Lucas Sahm — Desenvolvedor, Fotógrafo e Autor</footer>
 
   <script>
     const content = {
@@ -111,6 +117,8 @@
         tiText: "Degree in Systems Analysis and Development. Technician in Electronics and Industrial Automation. I enjoy solving problems and creating smart solutions.",
         photoTitle: "📷 Photographer",
         photoText: "In my spare time, I love capturing moments through my lens. I offer portraits, events and creative photo sessions.",
+        bookTitle: "📖 Published Author",
+        bookText: "I wrote the book *Entre as Linhas do Destino*, a story about self-discovery, emotional strength, and the unpredictable paths of life. Available on Clube de Autores and Amazon.",
       },
       pt: {
         title: "Olá, eu sou o Lucas Sahm 👋",
@@ -119,6 +127,8 @@
         tiText: "Formado em Análise e Desenvolvimento de Sistemas. Técnico em Eletrônica e Automação Industrial. Gosto de resolver problemas e criar soluções inteligentes.",
         photoTitle: "📷 Fotógrafo",
         photoText: "Nas horas vagas, adoro capturar momentos com minha lente. Faço retratos, eventos e ensaios criativos.",
+        bookTitle: "📖 Autor publicado",
+        bookText: "Escrevi o livro *Entre as Linhas do Destino*, uma história sobre autoconhecimento, força emocional e os caminhos imprevisíveis da vida. Disponível no Clube de Autores e na Amazon.",
       }
     };
 
@@ -131,6 +141,8 @@
       document.getElementById("ti-text").textContent = content[lang].tiText;
       document.getElementById("photo-title").textContent = content[lang].photoTitle;
       document.getElementById("photo-text").textContent = content[lang].photoText;
+      document.getElementById("book-title").textContent = content[lang].bookTitle;
+      document.getElementById("book-text").textContent = content[lang].bookText;
     }
 
     function toggleLanguage() {
