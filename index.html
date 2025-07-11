@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Lucas Sahm</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1f4037, #99f2c8);
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
       text-align: center;
-      padding: 100px 20px;
+      padding: 20px;
     }
 
     h1 {
@@ -20,28 +27,92 @@
 
     p {
       font-size: 1.2em;
-      margin-bottom: 40px;
+      max-width: 600px;
+      margin: 10px 0;
     }
 
     a.button {
+      margin-top: 30px;
       display: inline-block;
       padding: 15px 30px;
-      font-size: 1.2em;
-      color: #1f4037;
+      font-size: 1em;
+      color: #2c5364;
       background-color: #fff;
       border-radius: 30px;
       text-decoration: none;
+      font-weight: bold;
       transition: background 0.3s;
     }
 
     a.button:hover {
-      background-color: #f1f1f1;
+      background-color: #e0e0e0;
+    }
+
+    .language-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #ffffff22;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .language-switch:hover {
+      background: #ffffff44;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      opacity: 0.5;
     }
   </style>
 </head>
 <body>
-  <h1>Lucas Sahm</h1>
-  <p>Bem-vindo à minha página pessoal!</p>
-  <a href="https://linktr.ee/lucassahm" class="button" target="_blank">Acesse meus links</a>
+  <button class="language-switch" onclick="toggleLanguage()">🌐</button>
+
+  <h1 id="title"></h1>
+  <p id="bio"></p>
+  <p id="details"></p>
+  <a href="https://linktr.ee/lucassahm" class="button" target="_blank" id="button-text"></a>
+
+  <footer>Built with 💻🎶 by Lucas Sahm</footer>
+
+  <script>
+    const content = {
+      en: {
+        title: "Hi, I'm Lucas Sahm",
+        bio: "I'm passionate about technology and music. I love creating, exploring, and connecting ideas.",
+        details: "Bachelor in Systems Analysis and Development. Technician in Electronics and Industrial Automation.",
+        button: "Visit my links"
+      },
+      pt: {
+        title: "Olá, eu sou o Lucas Sahm",
+        bio: "Sou apaixonado por tecnologia e música. Adoro criar, explorar e conectar ideias.",
+        details: "Formado em Análise e Desenvolvimento de Sistemas. Técnico em Eletrônica e Automação Industrial.",
+        button: "Acesse meus links"
+      }
+    };
+
+    let currentLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
+
+    function updateContent(lang) {
+      document.getElementById("title").textContent = content[lang].title;
+      document.getElementById("bio").textContent = content[lang].bio;
+      document.getElementById("details").textContent = content[lang].details;
+      document.getElementById("button-text").textContent = content[lang].button;
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'pt' : 'en';
+      updateContent(currentLang);
+    }
+
+    // inicializa com o idioma detectado
+    updateContent(currentLang);
+  </script>
 </body>
 </html>
