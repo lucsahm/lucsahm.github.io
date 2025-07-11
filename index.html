@@ -138,51 +138,63 @@
     <a href="https://www.amazon.com.br/dp/B0DQVMF2YP" class="link-btn" target="_blank">E-Book - Entre as Linhas do Destino | Amazon 🛒</a>
   </div>
 
+  <h2 id="inspiration-title"></h2>
+  <p id="inspiration-text"></p>
+
+  <h2 id="book-title"></h2>
+  <p id="book-text"></p>
+ 
   <footer>Site por Lucas Sahm — Desenvolvedor, Fotógrafo e Autor</footer>
 
-  <script>
-    const content = {
-      en: {
-        title: "Hi, I'm Lucas Sahm 👋",
-        intro: "Welcome! I'm a technology professional with a passion for photography and creative expression.",
-        tiTitle: "💼 Tech Professional",
-        tiText: "Degree in Systems Analysis and Development. Technician in Electronics and Industrial Automation. I enjoy solving problems and creating smart solutions.",
-        photoTitle: "📷 Photographer",
-        photoText: "In my spare time, I love capturing moments through my lens. I offer portraits, events and creative photo sessions.",
-        bookTitle: "📖 Published Author",
-        bookText: "I wrote the book *Entre as Linhas do Destino*, a story about self-discovery, emotional strength, and the unpredictable paths of life. Available on Clube de Autores and Amazon.",
-      },
-      pt: {
-        title: "Olá, eu sou o Lucas Sahm 👋",
-        intro: "Bem-vindo! Sou um profissional de tecnologia com paixão por fotografia e expressão criativa.",
-        tiTitle: "💼 Profissional de TI",
-        tiText: "Formado em Análise e Desenvolvimento de Sistemas. Técnico em Eletrônica e Automação Industrial. Gosto de resolver problemas e criar soluções inteligentes.",
-        photoTitle: "📷 Fotógrafo",
-        photoText: "Nas horas vagas, adoro capturar momentos com minha lente. Faço pequenos eventos.",
-        bookTitle: "📖 Autor publicado",
-        bookText: "Escrevi o livro *Entre as Linhas do Destino*, uma história sobre autoconhecimento, força emocional e os caminhos imprevisíveis da vida. Disponível no Clube de Autores e na Amazon.",
-      }
-    };
-
-    let currentLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
-
-    function updateContent(lang) {
-      document.getElementById("title").textContent = content[lang].title;
-      document.getElementById("intro").textContent = content[lang].intro;
-      document.getElementById("ti-title").textContent = content[lang].tiTitle;
-      document.getElementById("ti-text").textContent = content[lang].tiText;
-      document.getElementById("photo-title").textContent = content[lang].photoTitle;
-      document.getElementById("photo-text").textContent = content[lang].photoText;
-      document.getElementById("book-title").textContent = content[lang].bookTitle;
-      document.getElementById("book-text").textContent = content[lang].bookText;
+ <script>
+  const content = {
+    en: {
+      title: "Hi, I'm Lucas Sahm 👋",
+      intro: "I build with logic, capture with light, and listen with soul. From automated systems to hi-fi soundscapes, I find expression in every frequency — of code, of image, of sound.",
+      tiTitle: "💼 Tech Professional",
+      tiText: "I navigate logic and systems with precision. With a background in Systems Analysis, Electronics, and Industrial Automation, I create smart solutions that flow as smoothly as well-written code.",
+      photoTitle: "📷 Photographer",
+      photoText: "Through the lens, I look for more than images — I seek stories, silences, and truths. Every click is an attempt to eternalize what is felt, not just seen.",
+      bookTitle: "📖 Published Author",
+      bookText: "In writing, I found the freedom to explore the invisible lines that connect choices and emotions. *Between the Lines of Destiny* is an invitation to introspection — a mirror of what moves me.",
+      inspirationTitle: "🎧 Inspirations",
+      inspirationText: "Hi-fi sound, jazz on vinyl, sunsets by the sea, coffee and code, silence after a shutter click."
+    },
+    pt: {
+      title: "Olá, eu sou o Lucas Sahm 👋",
+      intro: "Construo com lógica, capturo com luz e ouço com a alma. De sistemas automatizados a paisagens sonoras hi-fi, encontro expressão em cada frequência — do código, da imagem e do som.",
+      tiTitle: "💼 Profissional de TI",
+      tiText: "Navego pela lógica e pelos sistemas com precisão. Com formação em Análise de Sistemas, Eletrônica e Automação Industrial, crio soluções inteligentes que fluem como um bom código.",
+      photoTitle: "📷 Fotógrafo",
+      photoText: "Através da lente, procuro mais do que imagens — busco histórias, silêncios e verdades. Cada clique é uma tentativa de eternizar o que se sente, não apenas o que se vê.",
+      bookTitle: "📖 Autor publicado",
+      bookText: "Na escrita, encontrei liberdade para explorar as linhas invisíveis que conectam escolhas e emoções. *Entre as Linhas do Destino* é um convite à introspecção — um reflexo do que me move.",
+      inspirationTitle: "🎧 Inspirações",
+      inspirationText: "Som hi-fi, jazz no vinil, pores do sol à beira-mar, café com código, o silêncio após o clique do obturador."
     }
+  };
 
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'pt' : 'en';
-      updateContent(currentLang);
-    }
+  let currentLang = navigator.language.startsWith('pt') ? 'pt' : 'en';
 
+  function updateContent(lang) {
+    document.getElementById("title").textContent = content[lang].title;
+    document.getElementById("intro").textContent = content[lang].intro;
+    document.getElementById("ti-title").textContent = content[lang].tiTitle;
+    document.getElementById("ti-text").textContent = content[lang].tiText;
+    document.getElementById("photo-title").textContent = content[lang].photoTitle;
+    document.getElementById("photo-text").textContent = content[lang].photoText;
+    document.getElementById("book-title").textContent = content[lang].bookTitle;
+    document.getElementById("book-text").textContent = content[lang].bookText;
+    document.getElementById("inspiration-title").textContent = content[lang].inspirationTitle;
+    document.getElementById("inspiration-text").textContent = content[lang].inspirationText;
+  }
+
+  function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'pt' : 'en';
     updateContent(currentLang);
-  </script>
+  }
+
+  updateContent(currentLang);
+</script> 
 </body>
 </html>
