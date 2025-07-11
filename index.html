@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Lucas Sahm</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       margin: 0;
@@ -11,41 +11,51 @@
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
       color: #fff;
+      text-align: center;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
+      justify-content: center;
+      padding: 40px 20px;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 2.8em;
       margin-bottom: 10px;
     }
 
-    p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: 10px 0;
+    h2 {
+      margin-top: 40px;
+      font-size: 1.5em;
     }
 
-    a.button {
+    p {
+      max-width: 600px;
+      margin: 10px auto;
+      font-size: 1.1em;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
       margin-top: 30px;
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 1em;
+    }
+
+    .link-btn {
+      background: #fff;
       color: #2c5364;
-      background-color: #fff;
+      padding: 12px 25px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
     }
 
-    a.button:hover {
-      background-color: #e0e0e0;
+    .link-btn:hover {
+      background: #e0e0e0;
     }
 
     .language-switch {
@@ -65,7 +75,7 @@
     }
 
     footer {
-      margin-top: 60px;
+      margin-top: 50px;
       font-size: 0.9em;
       opacity: 0.5;
     }
@@ -75,25 +85,40 @@
   <button class="language-switch" onclick="toggleLanguage()">🌐</button>
 
   <h1 id="title"></h1>
-  <p id="bio"></p>
-  <p id="details"></p>
-  <a href="https://linktr.ee/lucassahm" class="button" target="_blank" id="button-text"></a>
+  <p id="intro"></p>
 
-  <footer>Built with 💻🎶 by Lucas Sahm</footer>
+  <h2 id="ti-title"></h2>
+  <p id="ti-text"></p>
+
+  <h2 id="photo-title"></h2>
+  <p id="photo-text"></p>
+
+  <div class="links">
+    <a href="https://www.instagram.com/lucassahmfotografias" class="link-btn" target="_blank">Instagram 📸</a>
+    <a href="https://wa.me/5547984912771" class="link-btn" target="_blank">WhatsApp 💬</a>
+    <a href="http://www.linkedin.com/in/lucas-sahm" class="link-btn" target="_blank">LinkedIn 💼</a>
+    <a href="https://github.com/LUCSAHM" class="link-btn" target="_blank">GitHub 👨‍💻</a>
+  </div>
+
+  <footer>Site por Lucas Sahm — Desenvolvedor e Fotógrafo</footer>
 
   <script>
     const content = {
       en: {
-        title: "Hi, I'm Lucas Sahm",
-        bio: "I'm passionate about technology and music. I love creating, exploring, and connecting ideas.",
-        details: "Bachelor in Systems Analysis and Development. Technician in Electronics and Industrial Automation.",
-        button: "Visit my links"
+        title: "Hi, I'm Lucas Sahm 👋",
+        intro: "Welcome! I'm a technology professional with a passion for photography and creative expression.",
+        tiTitle: "💼 Tech Professional",
+        tiText: "Degree in Systems Analysis and Development. Technician in Electronics and Industrial Automation. I enjoy solving problems and creating smart solutions.",
+        photoTitle: "📷 Photographer",
+        photoText: "In my spare time, I love capturing moments through my lens. I offer portraits, events and creative photo sessions.",
       },
       pt: {
-        title: "Olá, eu sou o Lucas Sahm",
-        bio: "Sou apaixonado por tecnologia e música. Adoro criar, explorar e conectar ideias.",
-        details: "Formado em Análise e Desenvolvimento de Sistemas. Técnico em Eletrônica e Automação Industrial.",
-        button: "Acesse meus links"
+        title: "Olá, eu sou o Lucas Sahm 👋",
+        intro: "Bem-vindo! Sou um profissional de tecnologia com paixão por fotografia e expressão criativa.",
+        tiTitle: "💼 Profissional de TI",
+        tiText: "Formado em Análise e Desenvolvimento de Sistemas. Técnico em Eletrônica e Automação Industrial. Gosto de resolver problemas e criar soluções inteligentes.",
+        photoTitle: "📷 Fotógrafo",
+        photoText: "Nas horas vagas, adoro capturar momentos com minha lente. Faço retratos, eventos e ensaios criativos.",
       }
     };
 
@@ -101,9 +126,11 @@
 
     function updateContent(lang) {
       document.getElementById("title").textContent = content[lang].title;
-      document.getElementById("bio").textContent = content[lang].bio;
-      document.getElementById("details").textContent = content[lang].details;
-      document.getElementById("button-text").textContent = content[lang].button;
+      document.getElementById("intro").textContent = content[lang].intro;
+      document.getElementById("ti-title").textContent = content[lang].tiTitle;
+      document.getElementById("ti-text").textContent = content[lang].tiText;
+      document.getElementById("photo-title").textContent = content[lang].photoTitle;
+      document.getElementById("photo-text").textContent = content[lang].photoText;
     }
 
     function toggleLanguage() {
@@ -111,7 +138,6 @@
       updateContent(currentLang);
     }
 
-    // inicializa com o idioma detectado
     updateContent(currentLang);
   </script>
 </body>
