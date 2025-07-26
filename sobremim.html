@@ -6,93 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 1.5em;
-      margin-top: 40px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.1em;
-      line-height: 1.6em;
-    }
-
-    a.back-btn {
-      margin-top: 30px;
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    a.back-btn:hover {
-      background: #fff;
-      color: #2c5364;
-    }
-
-    footer {
-      margin-top: auto;
-      font-size: 0.9em;
-      opacity: 0.5;
-      padding: 20px 0;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Mais sobre mim</h1>
+  <!-- Botão de idioma -->
+  <button class="language-switch" onclick="toggleLanguage()">🌐</button>
 
-<h2>💼 Profissional de TI</h2>
-<p> Com formação em Análise e Desenvolvimento de Sistemas, Eletrônica e Automação Industrial, atuo na área de tecnologia há mais de 10 anos, com foco em automação, e suporte técnico. Durante esse período, desenvolvi expertise no atendimento direto a clientes da Alemanha, oferecendo soluções eficazes em um ambiente bilíngue. Sou fluente em alemão, com certificação nível B2 pelo Goethe-Institut, o que me permite atuar com naturalidade e precisão em contextos técnicos e culturais internacionais.</p>
+  <h1 id="about-title">Mais sobre mim</h1>
 
-  <h2>📷 Fotógrafo</h2>
-  <p>Através da lente, procuro mais do que imagens — busco histórias, silêncios e verdades. Cada clique é uma tentativa de eternizar o que se sente, não apenas o que se vê.</p>
+  <div class="about-content" id="about-content">
+    <!-- Conteúdo será injetado via JS -->
+  </div>
 
-  <h2>📖 Autor</h2>
-  <p>Na escrita, encontrei liberdade para explorar as linhas invisíveis que conectam escolhas e emoções. <em>Entre as Linhas do Destino</em> é um convite à introspecção — um reflexo do que me move.</p>
+  <a href="index.html" class="back-btn" id="back-btn">⬅️ Voltar para a página inicial</a>
 
-  <h2>🎧 Inspirações</h2>
-  <p>Som hi-fi, rock no vinil, pores do sol na montanha, café com código, o silêncio após o clique do obturador.</p>
+  <footer id="footer">Site por Lucas Sahm — Desenvolvedor, Fotógrafo e Autor</footer>
 
-  <a href="index.html" class="back-btn">⬅️ Voltar para a página inicial</a>
-
-  <footer>Site por Lucas Sahm — Desenvolvedor, Fotógrafo e Autor</footer>
-
+  <script src="script.js"></script>
 </body>
 </html>

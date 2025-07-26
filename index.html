@@ -6,118 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      text-align: center;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      padding: 40px 20px;
-    }
-
-    .avatar-container {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: rgba(255,255,255,0.03);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 20px rgba(44,83,100,0.5);
-      margin-bottom: 20px;
-    }
-
-    .avatar-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 10px 0 30px;
-    }
-
-    .links {
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  gap: 15px;
-	  margin-bottom: 30px;
-	}
-
-    .link-btn {
-      background: #fff;
-      color: #2c5364;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-      min-width: 240px;
-      text-align: center;
-    }
-
-    .link-btn:hover {
-      background: #e0e0e0;
-    }
-
-    a.more-info {
-      margin-top: 20px;
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    a.more-info:hover {
-      background: #fff;
-      color: #2c5364;
-    }
-
-    footer {
-      margin-top: auto;
-      font-size: 0.9em;
-      opacity: 0.5;
-      padding: 20px 0;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      .link-btn {
-        font-size: 0.9em;
-        min-width: 200px;
-      }
-
-      .links {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Botão de idioma -->
+  <button class="language-switch" onclick="toggleLanguage()">🌐</button>
 
   <div class="avatar-container">
     <img src="img01.png" alt="Avatar de Lucas Sahm">
   </div>
 
-  <h1>Lucas Sahm</h1>
+  <h1 id="title">Olá, eu sou Lucas Sahm</h1>
 
   <div class="links">
     <a href="https://www.instagram.com/lucassahmfotografias" class="link-btn" target="_blank">Instagram 📸</a>
@@ -129,9 +29,10 @@
     <a href="https://www.amazon.com.br/dp/B0DQVMF2YP" class="link-btn" target="_blank">E-book 🛒</a>
   </div>
 
-  <a href="sobremim.html" class="more-info">Mais sobre mim ➡️</a>
+  <a href="sobremim.html" class="more-info" id="more-info-btn">Mais sobre mim ➡️</a>
 
-  <footer>Site por Lucas Sahm — Desenvolvedor, Fotógrafo e Autor</footer>
+  <footer id="footer">Site por Lucas Sahm — Desenvolvedor, Fotógrafo e Autor</footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
